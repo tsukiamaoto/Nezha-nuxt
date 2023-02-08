@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex justify-content-center align-items-center">
-    <form @submit.prevent="handleEmailSignup">
+    <form @submit.prevent="handleEmailLogin">
       <div class="form-floating mb-3">
         <input
           id="floatingInput"
@@ -32,21 +32,23 @@
 <script lang="ts" setup>
 import { useUserStore } from '@/stores/user'
 
+const route = useRoute()
 const userStore = useUserStore()
 const loginData = reactive({
   email: '',
   password: ''
 })
 
-const handleEmailSignup = async () => {
+const handleEmailLogin = async () => {
   const { data, error } = await userStore.emailLogin({ data: toRaw(loginData) })
 
-  if (data.value) {
-    navigateTo('/')
+  if (data.value && typeof route.query.redirect_to === 'string') {
+    navigateTo(route.query.redirect_to || '/')
   }
 }
 
 definePageMeta({
-  layout: false
+  layout: false,
+  middleware: 'logged-in-redirect'
 })
 </script>
