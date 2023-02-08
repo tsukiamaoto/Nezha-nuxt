@@ -11,5 +11,5 @@ const { getUserProfile } = profileStores
 // 獲得profile資料
 getUserProfile()
 // 解構state
-const { profile } = storeToRefs(profileStores)
+const { profile, pending } = storeToRefs(profileStores)
 </script>
