@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <NavBar />
     <slot />
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center mt-5">
       <p>© {{ year }} {{ writer }} All rights reserved.</p>
     </div>
   </div>

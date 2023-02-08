@@ -39,7 +39,7 @@ const loginData = reactive({
 })
 
 const handleEmailSignup = async () => {
-  const { data, error } = await userStore.emailLogin({ data: toRaw(loginData) })
+  const { data, error } = await userStore.emailSignup({ data: toRaw(loginData) })
 
   if (data.value) {
     navigateTo('/')
