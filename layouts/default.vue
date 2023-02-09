@@ -8,7 +8,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-const now = new Date()
-const year = now.getFullYear()
-const writer = 'Gary'
+const now = new Date();
+const year = now.getFullYear();
+const writer = 'Gary';
 </script>

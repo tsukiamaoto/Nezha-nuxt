@@ -1,15 +1,15 @@
 export default defineNuxtRouteMiddleware((to, from) => {
   if (from && to.path !== from.path && !to.query.redirect_to) {
-    let redirectTo = null
+    let redirectTo = null;
     if (from.query.redirect_to) {
-      redirectTo = from.query.redirect_to
-      from.query.redirect_to = undefined
+      redirectTo = from.query.redirect_to;
+      from.query.redirect_to = undefined;
     } else {
-      redirectTo = from.fullPath
+      redirectTo = from.fullPath;
     }
 
-    to.query.redirect_to = redirectTo
+    to.query.redirect_to = redirectTo;
 
-    return navigateTo(to)
+    return navigateTo(to);
   }
-})
+});

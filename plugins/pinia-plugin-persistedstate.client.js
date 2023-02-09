@@ -1,5 +1,5 @@
-import piniaPersistedstate from 'pinia-plugin-persistedstate'
+import piniaPersistedstate from 'pinia-plugin-persistedstate';
 
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.$pinia.use(piniaPersistedstate)
-})
+  nuxtApp.$pinia.use(piniaPersistedstate);
+});

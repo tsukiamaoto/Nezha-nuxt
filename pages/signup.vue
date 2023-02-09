@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-content-center align-items-center">
+  <div class="loginForm">
     <form @submit.prevent="handleEmailSignup">
       <div class="form-floating mb-3">
         <input
@@ -30,23 +30,23 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { useUserStore } from '@/stores/user'
+import { useUserStore } from '@/stores/user';
 
-const userStore = useUserStore()
+const userStore = useUserStore();
 const loginData = reactive({
   email: '',
   password: ''
-})
+});
 
 const handleEmailSignup = async () => {
-  const { data, error } = await userStore.emailSignup({ data: toRaw(loginData) })
+  const { data, error } = await userStore.emailSignup({ data: toRaw(loginData) });
 
   if (data.value) {
-    navigateTo('/')
+    navigateTo('/');
   }
-}
+};
 
 definePageMeta({
   layout: false
-})
+});
 </script>

@@ -1,4 +1,4 @@
-import prisma from '@/server/database'
+import prisma from '@/server/database';
 
 async function getAllUser(options = {}) {
   const results = await prisma.user
@@ -8,14 +8,14 @@ async function getAllUser(options = {}) {
       }
     })
     .catch((err) => {
-      console.error(err)
+      console.error(err);
       throw createError({
         statusCode: 500,
         statusMessage: `Failed get all user. The reasone is ${err}`
-      })
-    })
+      });
+    });
 
-  return results
+  return results;
 }
 
 async function getUserById(options = {}) {
@@ -26,14 +26,14 @@ async function getUserById(options = {}) {
       }
     })
     .catch((err) => {
-      console.error(err)
+      console.error(err);
       throw createError({
         statusCode: 500,
         statusMessage: `Failed to get user by id, the reason is ${err}`
-      })
-    })
+      });
+    });
 
-  return results
+  return results;
 }
 
 async function createUser(options = {}) {
@@ -46,14 +46,14 @@ async function createUser(options = {}) {
       }
     })
     .catch((err) => {
-      console.error(err)
+      console.error(err);
       throw createError({
         statusCode: 500,
         statusMessage: `Failed to create an user, the reason is ${err}`
-      })
-    })
+      });
+    });
 
-  return results
+  return results;
 }
 
 async function updateUserById(options = {}) {
@@ -69,14 +69,14 @@ async function updateUserById(options = {}) {
       }
     })
     .catch((err) => {
-      console.error(err)
+      console.error(err);
       throw createError({
         statusCode: 500,
         statusMessage: `Failed to update the user by id, the reason is ${err}`
-      })
-    })
+      });
+    });
 
-  return results
+  return results;
 }
 
 async function deleteUserById(options = {}) {
@@ -87,13 +87,13 @@ async function deleteUserById(options = {}) {
       }
     })
     .catch((err) => {
-      console.error(err)
+      console.error(err);
       throw createError({
         statusCode: 500,
         statusMessage: `Failed to delete the user by id, the reason is ${err}`
-      })
-    })
-  return results
+      });
+    });
+  return results;
 }
 
 async function getUserByEmail(option = {}) {
@@ -104,13 +104,13 @@ async function getUserByEmail(option = {}) {
       }
     })
     .catch((err) => {
-      console.error(err)
+      console.error(err);
       throw createError({
         statusCode: 500,
         statusMessage: `Failed to get user by email, the reason is ${err}`
-      })
-    })
-  return results
+      });
+    });
+  return results;
 }
 
 export default {
@@ -120,4 +120,4 @@ export default {
   createUser,
   updateUserById,
   deleteUserById
-}
+};

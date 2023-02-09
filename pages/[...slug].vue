@@ -7,7 +7,7 @@
 <script lang="ts" setup>
 definePageMeta({
   layout: false
-})
+});
 
-setResponseStatus(404)
+setResponseStatus(404);
 </script>

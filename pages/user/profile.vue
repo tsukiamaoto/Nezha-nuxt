@@ -2,14 +2,14 @@
   <div>profile: {{ profile }}</div>
 </template>
 <script lang="ts" setup>
-import { storeToRefs } from 'pinia'
-import { useProfileStore } from '@/stores/profile'
+import { storeToRefs } from 'pinia';
+import { useProfileStore } from '@/stores/profile';
 
-const profileStores = useProfileStore()
+const profileStores = useProfileStore();
 // 直接獲得action
-const { getUserProfile } = profileStores
+const { getUserProfile } = profileStores;
 // 獲得profile資料
-getUserProfile()
+getUserProfile();
 // 解構state
-const { profile, pending } = storeToRefs(profileStores)
+const { profile, pending } = storeToRefs(profileStores);
 </script>

@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
 
 export const useProfileStore = defineStore('profile', {
   state: () => ({
@@ -11,15 +11,15 @@ export const useProfileStore = defineStore('profile', {
   }),
   actions: {
     async getUserProfile() {
-      const runtimeConfig = useRuntimeConfig()
-      const { apiBase } = runtimeConfig.public
+      const runtimeConfig = useRuntimeConfig();
+      const { apiBase } = runtimeConfig.public;
       try {
-        const { data, pending } = await useFetch(`${apiBase}/profile`)
-        this.profile = data
-        this.pending = pending
+        const { data, pending } = await useFetch(`${apiBase}/profile`);
+        this.profile = data;
+        this.pending = pending;
       } catch (error) {
-        return error
+        return error;
       }
     }
   }
-})
+});

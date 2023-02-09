@@ -10,7 +10,8 @@ module.exports = {
   },
   plugins: ['prettier'],
   rules: {
-    'prettier/prettier': 'error'
+    'prettier/prettier': 'error',
+    'no-undef': 'off'
   },
   overrides: [
     {
@@ -25,4 +26,4 @@ module.exports = {
       }
     }
   ]
-}
+};

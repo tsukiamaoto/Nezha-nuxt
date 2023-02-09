@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: ['@pinia/nuxt'],
-  css: ['bootstrap/dist/css/bootstrap.min.css'],
+  css: ['bootstrap/dist/css/bootstrap.min.css', '@/assets/style/login.css'],
   runtimeConfig: {
     public: {
       apiBase: '/api'
@@ -11,4 +11,4 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: true
   }
-})
+});
