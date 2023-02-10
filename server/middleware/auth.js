@@ -6,7 +6,7 @@ export default defineEventHandler((event) => {
   const jwtToken = getCookie(event, 'access_token');
 
   if (!jwtToken) {
-    return '';
+    return;
   }
 
   try {

@@ -1,11 +1,13 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
+    "server": "nodemon ./server-express/index.js --prefix server",
+    "build": "yarn nuxt:prepare && nuxt build",
+    "dev": "concurrently \"npm run server\" \"yarn nuxt:prepare && nuxt dev\"",
+    "start": "concurrently \"node ./server-express/index.js\" \"node .output/server/index.mjs\"",
+    "nuxt:prepare": "nuxi prepare",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
     "lint": "eslint --ext .ts,.js,.vue ."
   },
   "devDependencies": {
@@ -19,7 +21,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.9.0",
     "jsonwebtoken": "^9.0.0",
-    "nuxt": "^3.1.1",
+    "nuxt": "^3.2.0",
     "pinia": "^2.0.30",
     "pinia-plugin-persistedstate": "^3.0.2",
     "prettier": "^2.8.3",
